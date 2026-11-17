@@ -10,6 +10,10 @@ source ../../support/cluster.tcl ; # Cluster client.
 set ::instances_count 20 ; # How many instances we use at max.
 set ::tlsdir "../../tls"
 
+# Keep client ports and their default cluster-bus ports below Linux's
+# default ephemeral-port range, including when a node is restarted.
+set ::valkey_base_port 18000
+
 proc main {} {
     parse_options
     spawn_instance valkey $::valkey_base_port $::instances_count {
