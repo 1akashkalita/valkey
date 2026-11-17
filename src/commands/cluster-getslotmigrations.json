@@ -72,11 +72,6 @@
                     "cow_size": {
                         "description": "Copy on write bytes during slot migration fork.",
                         "type": "integer"
-                    },
-                    "remaining_repl_size": {
-                        "description": "Bytes pending in the source slot export client's reply buffer. Zero for imports or when no export client is attached.",
-                        "type": "integer",
-                        "minimum": 0
                     }
                 }
             }
